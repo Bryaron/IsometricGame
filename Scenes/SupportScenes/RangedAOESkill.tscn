@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmeow0vnjjugb"]
+
+[ext_resource type="Script" path="res://Scripts/ranged_aoe_skill.gd" id="1_j81gf"]
+[ext_resource type="Texture2D" uid="uid://ck4hg006hsy63" path="res://Assets/Ice_Quake.png" id="1_jyki7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_12k4o"]
+radius = 65.0
+
+[sub_resource type="Animation" id="Animation_xwspf"]
+resource_name = "Cryo_Bomb"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_rhui0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxr4k"]
+_data = {
+"Cryo_Bomb": SubResource("Animation_xwspf"),
+"RESET": SubResource("Animation_rhui0")
+}
+
+[node name="RangedAOESkill" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_j81gf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_12k4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jyki7")
+hframes = 6
+vframes = 3
+frame = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wxr4k")
+}

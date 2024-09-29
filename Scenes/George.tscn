@@ -1,0 +1,365 @@
+[gd_scene load_steps=24 format=3 uid="uid://dsmoc0grt6gmd"]
+
+[ext_resource type="Script" path="res://Scripts/george.gd" id="1_3s8m1"]
+[ext_resource type="Texture2D" uid="uid://p6et6d8qyiig" path="res://Assets/skeleton_knight.png" id="2_l5ir7"]
+[ext_resource type="Texture2D" uid="uid://bmwyoxpwl50oc" path="res://Assets/UI_Elements/HPbar.jpg" id="3_ucw4t"]
+[ext_resource type="Texture2D" uid="uid://daduiud7w31h" path="res://Assets/UI_Elements/HPbar_Over.png" id="4_enc0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hphsj"]
+size = Vector2(28, 36)
+
+[sub_resource type="Animation" id="Animation_7o1r3"]
+resource_name = "Death_E"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [134, 135, 136, 137, 138, 139]
+}
+
+[sub_resource type="Animation" id="Animation_jcvnx"]
+resource_name = "Death_N"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [78, 79, 80, 81, 82, 83]
+}
+
+[sub_resource type="Animation" id="Animation_jv0no"]
+resource_name = "Death_NE"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [106, 107, 108, 109, 110, 111]
+}
+
+[sub_resource type="Animation" id="Animation_ad000"]
+resource_name = "Death_NW"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [50, 51, 52, 53, 54, 55]
+}
+
+[sub_resource type="Animation" id="Animation_eect5"]
+resource_name = "Death_S"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [190, 191, 192, 193, 194, 195]
+}
+
+[sub_resource type="Animation" id="Animation_4qtmr"]
+resource_name = "Death_SE"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [162, 163, 164, 165, 166, 167]
+}
+
+[sub_resource type="Animation" id="Animation_ig706"]
+resource_name = "Death_SW"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [218, 219, 220, 221, 222, 223]
+}
+
+[sub_resource type="Animation" id="Animation_q8xai"]
+resource_name = "Death_W"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [22, 23, 24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_dyeki"]
+resource_name = "Idle_E"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [112, 113, 114, 115, 112, 113]
+}
+
+[sub_resource type="Animation" id="Animation_0xpi5"]
+resource_name = "Idle_N"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59, 56, 57]
+}
+
+[sub_resource type="Animation" id="Animation_3bp67"]
+resource_name = "Idle_NE"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [84, 85, 86, 87, 84, 85]
+}
+
+[sub_resource type="Animation" id="Animation_c4l6e"]
+resource_name = "Idle_NW"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31, 28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_x01ur"]
+resource_name = "Idle_S"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [168, 169, 170, 171, 168, 169]
+}
+
+[sub_resource type="Animation" id="Animation_lwu3w"]
+resource_name = "Idle_SE"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [140, 141, 142, 143, 140, 141]
+}
+
+[sub_resource type="Animation" id="Animation_7sv78"]
+resource_name = "Idle_SW"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [196, 197, 198, 199, 196, 197]
+}
+
+[sub_resource type="Animation" id="Animation_7vkhw"]
+resource_name = "Idle_W"
+length = 1.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_wwmc1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeletonKnight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [168]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwllo"]
+_data = {
+"Death_E": SubResource("Animation_7o1r3"),
+"Death_N": SubResource("Animation_jcvnx"),
+"Death_NE": SubResource("Animation_jv0no"),
+"Death_NW": SubResource("Animation_ad000"),
+"Death_S": SubResource("Animation_eect5"),
+"Death_SE": SubResource("Animation_4qtmr"),
+"Death_SW": SubResource("Animation_ig706"),
+"Death_W": SubResource("Animation_q8xai"),
+"Idle_E": SubResource("Animation_dyeki"),
+"Idle_N": SubResource("Animation_0xpi5"),
+"Idle_NE": SubResource("Animation_3bp67"),
+"Idle_NW": SubResource("Animation_c4l6e"),
+"Idle_S": SubResource("Animation_x01ur"),
+"Idle_SE": SubResource("Animation_lwu3w"),
+"Idle_SW": SubResource("Animation_7sv78"),
+"Idle_W": SubResource("Animation_7vkhw"),
+"RESET": SubResource("Animation_wwmc1")
+}
+
+[node name="George" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_3s8m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hphsj")
+
+[node name="SkeletonKnight" type="Sprite2D" parent="."]
+texture = ExtResource("2_l5ir7")
+hframes = 28
+vframes = 8
+frame = 168
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwllo")
+}
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(80, 10)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -30.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_ucw4t")
+texture_over = ExtResource("4_enc0d")
+texture_progress = ExtResource("3_ucw4t")
+tint_under = Color(0.156863, 0.156863, 0.156863, 1)
+tint_progress = Color(0.12549, 0.831373, 0.105882, 1)

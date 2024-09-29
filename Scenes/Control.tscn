@@ -1,0 +1,239 @@
+[gd_scene load_steps=7 format=3 uid="uid://hhwstk0vnfro"]
+
+[ext_resource type="Script" path="res://Scripts/SQL_controller.gd" id="1_1864u"]
+[ext_resource type="Texture2D" uid="uid://246alb0xcan" path="res://UIElements/background.jpg" id="2_srxlg"]
+[ext_resource type="Texture2D" uid="uid://co1xli28uu766" path="res://UIElements/red_button02.png" id="3_xbbdf"]
+[ext_resource type="Texture2D" uid="uid://cmtev5u4n81gv" path="res://UIElements/red_button01.png" id="4_ixbq7"]
+[ext_resource type="Texture2D" uid="uid://cgv7ulvpfgg52" path="res://UIElements/red_button00.png" id="5_qt1fw"]
+[ext_resource type="Texture2D" uid="uid://ctpdftykq56oe" path="res://UIElements/red_button13.png" id="6_abthk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1864u")
+
+[node name="CRUDScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CRUDScreen"]
+custom_minimum_size = Vector2(640, 1080)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_srxlg")
+
+[node name="MarginContainer" type="MarginContainer" parent="CRUDScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CRUDScreen/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "ADMINISTRADOR"
+horizontal_alignment = 1
+
+[node name="UsernameTitle" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Usuario"
+
+[node name="Username" type="LineEdit" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EmailTitle" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Email"
+
+[node name="Email" type="LineEdit" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PasswordTitle" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Contraseña"
+
+[node name="Password" type="LineEdit" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EventTitle" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Evento"
+
+[node name="Event" type="LineEdit" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="VBoxContainerButtons" type="VBoxContainer" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons"]
+layout_mode = 2
+
+[node name="CreateTable" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer/CreateTable"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crear tabla"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InsertData" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer/InsertData"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Insertar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons"]
+layout_mode = 2
+
+[node name="SelectData" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2/SelectData"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Seleccionar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpdateData" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2/UpdateData"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Actualizar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons"]
+layout_mode = 2
+
+[node name="DeleteData" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3/DeleteData"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eliminar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CustomSelect" type="TextureButton" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_xbbdf")
+texture_pressed = ExtResource("4_ixbq7")
+texture_hover = ExtResource("5_qt1fw")
+texture_disabled = ExtResource("6_abthk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3/CustomSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Custom Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer/CreateTable" to="." method="_on_create_table_button_down"]
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer/InsertData" to="." method="_on_insert_data_button_down"]
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2/SelectData" to="." method="_on_select_data_button_down"]
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer2/UpdateData" to="." method="_on_update_data_button_down"]
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3/DeleteData" to="." method="_on_delete_data_button_down"]
+[connection signal="button_down" from="CRUDScreen/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainerButtons/HBoxContainer3/CustomSelect" to="." method="_on_custom_select_button_down"]
